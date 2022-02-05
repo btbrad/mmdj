@@ -1,2 +1,11 @@
 <!--pages/home/home.wxml-->
-<text>广场</text>
+<view class="container">
+  <view class="tabs">
+    <view class="tab-item" wx:for="{{ tabs }}">
+      <view class="tab-label">{{ item }}</view>
+      <view class="divider"></view>
+    </view>
+  </view>
+  <view class="category"></view>
+  <view class="tab-panel"></view>
+</view>
