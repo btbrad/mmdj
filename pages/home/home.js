@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: ['全部服务', '在提供', '正在找']
+    tabs: ['全部服务', '在提供', '正在找'],
+    currentTabIndex: 0
   },
 
   /**
@@ -62,5 +63,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  handleTabChange: function (event) {
+    console.log(event)
+    const index = event.currentTarget.dataset.index
+    this.setData({
+      currentTabIndex: index
+    })
   }
 })

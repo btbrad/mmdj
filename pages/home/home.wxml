@@ -1,9 +1,9 @@
 <!--pages/home/home.wxml-->
 <view class="container">
   <view class="tabs">
-    <view class="tab-item" wx:for="{{ tabs }}">
-      <view class="tab-label">{{ item }}</view>
-      <view class="divider"></view>
+    <view class="tab-item" wx:for="{{ tabs }}" wx:key="index" data-index="{{index}}" bind:tap="handleTabChange">
+      <view class="tab-label {{currentTabIndex === index ? 'active-tab' : ''}}">{{ item }}</view>
+      <view wx:if="{{currentTabIndex === index}}" class="divider"></view>
     </view>
   </view>
   <view class="category"></view>
