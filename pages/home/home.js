@@ -80,12 +80,10 @@ Page({
   },
 
   handleTabChange: function (event) {
-    console.log(event)
-    const index = event.currentTarget.dataset.index
-    this.setData({
-      currentTabIndex: index
-    })
+    const index = event.detail.index
+    console.log(index)
   },
+
   handleCategoryChange: function (event) {
     console.log(event)
     const id = event.currentTarget.dataset.id
