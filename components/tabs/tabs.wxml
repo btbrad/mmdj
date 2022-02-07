@@ -6,7 +6,8 @@
       <view wx:if="{{currentTabIndex === index}}" class="divider"></view>
     </view>
   </view>
+  <slot name="extend"></slot>
   <view class="tab-panel">
-
+    <slot name="panel"></slot>
   </view>
 </view>

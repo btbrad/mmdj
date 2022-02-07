@@ -1,14 +1,15 @@
 <!--pages/home/home.wxml-->
 <view class="container">
-  <i-tabs tabs="{{tabs}}" bind:change="handleTabChange"></i-tabs>
-  <view class="category">
-    <swiper class="swiper-container" display-multiple-items="{{2}}" next-margin="60rpx">
-      <swiper-item wx:for="{{ categoryList }}" wx:key="index" data-id="{{ item.id }}" bind:tap="handleCategoryChange">
-        <view class="category-swiper-item">
-          <text class="category-name">{{ item.name }}</text>
-        </view>
-      </swiper-item>
-    </swiper>
-  </view>
-  <view class="tab-panel"></view>
+  <i-tabs tabs="{{tabs}}" bind:change="handleTabChange">
+    <view class="category" slot="extend">
+      <swiper class="swiper-container" display-multiple-items="{{2}}" next-margin="60rpx">
+        <swiper-item wx:for="{{ categoryList }}" wx:key="index" data-id="{{ item.id }}" bind:tap="handleCategoryChange">
+          <view class="category-swiper-item">
+            <text class="category-name">{{ item.name }}</text>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="tab-panel" slot="panel">111</view>
+  </i-tabs>
 </view>
