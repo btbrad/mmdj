@@ -32,3 +32,6 @@
   margin-top: 10rpx;
   background-color: #f3d066;
 }
+.tab-panel {
+  flex: 1;
+}

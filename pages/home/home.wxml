@@ -1,6 +1,6 @@
 <!--pages/home/home.wxml-->
 <view class="container">
-  <i-tabs tabs="{{tabs}}" bind:change="handleTabChange">
+  <i-tabs tabs="{{tabs}}" bind:change="handleTabChange"  style="height: 100%">
     <view class="category" slot="extend">
       <swiper class="swiper-container" display-multiple-items="{{2}}" next-margin="60rpx">
         <swiper-item wx:for="{{ categoryList }}" wx:key="index" data-id="{{ item.id }}" bind:tap="handleCategoryChange">
@@ -10,6 +10,6 @@
         </swiper-item>
       </swiper>
     </view>
-    <view class="tab-panel" slot="panel">111111111111111111111111111111111111111111111111111</view>
+    <view slot="panel">111111111111111111111111111111111111111111111111111</view>
   </i-tabs>
 </view>

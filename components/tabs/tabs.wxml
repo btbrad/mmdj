@@ -6,7 +6,9 @@
       <view wx:if="{{currentTabIndex === index}}" class="divider"></view>
     </view>
   </view>
-  <slot name="extend"></slot>
+  <view class="extend">
+    <slot name="extend"></slot>
+  </view>
   <wxs module="touchMove" src="/common/wxs/touchMove.wxs"></wxs>
   <view
     class="tab-panel"
