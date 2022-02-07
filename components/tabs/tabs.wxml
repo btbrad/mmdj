@@ -7,7 +7,12 @@
     </view>
   </view>
   <slot name="extend"></slot>
-  <view class="tab-panel">
+  <wxs module="touchMove" src="/common/wxs/touchMove.wxs"></wxs>
+  <view
+    class="tab-panel"
+    bind:touchstart="{{touchMove.handleTouchStart}}"
+    bind:touchend="{{touchMove.handleTouchEnd}}"
+  >
     <slot name="panel"></slot>
   </view>
 </view>

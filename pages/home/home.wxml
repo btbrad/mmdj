@@ -10,6 +10,6 @@
         </swiper-item>
       </swiper>
     </view>
-    <view class="tab-panel" slot="panel">111</view>
+    <view class="tab-panel" slot="panel">111111111111111111111111111111111111111111111111111</view>
   </i-tabs>
 </view>

@@ -32,5 +32,26 @@ Component({
       // 触发自定义事件
       this.triggerEvent('change', { index })
     },
+
+    switchTab: function ({direction}) {
+      console.log(direction, this) 
+      if (!direction) {
+        return
+      }
+      if (direction === -1) {
+        const index = this.data.currentTabIndex - 1
+        this.setData({
+          currentTabIndex: index <= 0 ? 0 : index
+        })
+      }     
+      if (direction === 1) {
+        const length = this.data.tabs.length
+        const index = this.data.currentTabIndex + 1
+        this.setData({
+          currentTabIndex: index >= length - 1 ? length - 1 : index
+        })
+      }     
+    }
+
   }
 })
