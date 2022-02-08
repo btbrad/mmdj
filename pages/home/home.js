@@ -1,4 +1,8 @@
 // pages/home/home.js
+import Service from '../../model/service'
+
+const service = new Service()
+
 Page({
 
   /**
@@ -27,7 +31,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this._getServiceList()
+  },
 
+  // 私有函数
+  // 发送请求
+  _getServiceList() {
+    service.getServiceList()
   },
 
   /**
