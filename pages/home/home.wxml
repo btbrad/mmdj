@@ -1,19 +1,15 @@
 <!--pages/home/home.wxml-->
 <view class="container">
-  <view class="tabs">
-    <view class="tab-item" wx:for="{{ tabs }}" wx:key="index" data-index="{{index}}" bind:tap="handleTabChange">
-      <view class="tab-label {{currentTabIndex === index ? 'active-tab' : ''}}">{{ item }}</view>
-      <view wx:if="{{currentTabIndex === index}}" class="divider"></view>
+  <i-tabs tabs="{{tabs}}" bind:change="handleTabChange"  style="height: 100%">
+    <view class="category" slot="extend">
+      <swiper class="swiper-container" display-multiple-items="{{2}}" next-margin="60rpx">
+        <swiper-item wx:for="{{ categoryList }}" wx:key="index" data-id="{{ item.id }}" bind:tap="handleCategoryChange">
+          <view class="category-swiper-item">
+            <text class="category-name">{{ item.name }}</text>
+          </view>
+        </swiper-item>
+      </swiper>
     </view>
-  </view>
-  <view class="category">
-    <swiper class="swiper-container" display-multiple-items="{{2}}" next-margin="60rpx">
-      <swiper-item wx:for="{{ categoryList }}" wx:key="item.id" data-id="{{ item.id }}" bind:tap="handleCategoryChange">
-        <view class="category-swiper-item">
-          <text class="category-name">{{ item.name }}</text>
-        </view>
-      </swiper-item>
-    </swiper>
-  </view>
-  <view class="tab-panel"></view>
+    <view slot="panel">111111111111111111111111111111111111111111111111111</view>
+  </i-tabs>
 </view>

@@ -1,0 +1,20 @@
+<!--components/tabs/tabs.wxml-->
+<view class="container">
+  <view class="tabs">
+    <view class="tab-item" wx:for="{{ tabs }}" wx:key="index" data-index="{{index}}" bind:tap="handleTabChange">
+      <view class="tab-label {{currentTabIndex === index ? 'active-tab' : ''}}">{{ item }}</view>
+      <view wx:if="{{currentTabIndex === index}}" class="divider"></view>
+    </view>
+  </view>
+  <view class="extend">
+    <slot name="extend"></slot>
+  </view>
+  <wxs module="touchMove" src="/common/wxs/touchMove.wxs"></wxs>
+  <view
+    class="tab-panel"
+    bind:touchstart="{{touchMove.handleTouchStart}}"
+    bind:touchend="{{touchMove.handleTouchEnd}}"
+  >
+    <slot name="panel"></slot>
+  </view>
+</view>
