@@ -25,6 +25,9 @@ Page({
         id: 3,
         name: '疏通'
       }
+    ],
+    serviceList: [
+      {}
     ]
   },
 
@@ -40,7 +43,9 @@ Page({
   // 发送请求
   async _getServiceList() {
     const serviceList = await service.getServiceList(1, 10)
-
+    this.setData({
+      serviceList
+    })
   },
 
   _getCategoryList() {

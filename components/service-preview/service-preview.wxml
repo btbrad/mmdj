@@ -1,0 +1,28 @@
+<!--components/service-preview/service-preview.wxml-->
+<view class="container">
+  <view class="left">
+    <image class="cover-image" src=""></image>
+  </view>
+  <view class="right">
+    <view class="row">
+      <view class="service-title"></view>
+      <view class="category"></view>
+    </view>
+    <view class="row">
+      <view class="publisher">
+        <view class="pulisher-avatar">
+          <image src=""></image>
+        </view>
+        <view class="publisher-nickname"></view>
+        <view class="score"></view>
+      </view>
+    </view>
+    <view class="row">
+      <view class="create-time"></view>
+    </view>
+    <view class="row">
+      <view class="price"></view>
+      <view class="sales"></view>
+    </view>
+  </view>
+</view>

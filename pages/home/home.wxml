@@ -10,6 +10,8 @@
         </swiper-item>
       </swiper>
     </view>
-    <view slot="panel">111111111111111111111111111111111111111111111111111</view>
+    <view slot="panel">
+      <view wx:for="{{ serviceList }}" wx:key="index"></view>
+    </view>
   </i-tabs>
 </view>
