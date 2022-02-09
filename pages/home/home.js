@@ -1,4 +1,5 @@
 // pages/home/home.js
+import Category from '../../model/category'
 import Service from '../../model/service'
 
 const service = new Service()
@@ -32,12 +33,21 @@ Page({
    */
   onLoad: function (options) {
     this._getServiceList()
+    this._getCategoryList()
   },
 
   // 私有函数
   // 发送请求
-  _getServiceList() {
-    service.getServiceList()
+  async _getServiceList() {
+    const serviceList = await service.getServiceList(1, 10)
+
+  },
+
+  _getCategoryList() {
+    const categoryList = Category.getCategoryListWithAll()
+    // this.setData({
+    //   categoryList
+    // })
   },
 
   /**
