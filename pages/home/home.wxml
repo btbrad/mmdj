@@ -11,7 +11,9 @@
       </swiper>
     </view>
     <view slot="panel">
-      <view wx:for="{{ serviceList }}" wx:key="index"></view>
+      <view wx:for="{{ serviceList }}" wx:key="index">
+        <i-service-preview service="{{item}}"></i-service-preview>
+      </view>
     </view>
   </i-tabs>
 </view>
