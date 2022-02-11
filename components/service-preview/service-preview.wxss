@@ -60,6 +60,10 @@
   margin-left: 20rpx;
 }
 
+.category-text {
+  margin-left: 10rpx;
+}
+
 .publisher {
   display: flex;
   align-items: center;

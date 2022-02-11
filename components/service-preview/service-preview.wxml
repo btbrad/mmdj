@@ -12,7 +12,10 @@
         {{ service.title }}
       </view>
       <view class="category">
-        {{ service.category }}
+        <i-icon name="biaoqian" color="#f27013"></i-icon>
+        <view class="category-text">
+          {{ service.category }}
+        </view>
       </view>
     </view>
     <view class="row">
@@ -23,7 +26,7 @@
         <view class="publisher-nickname">
           {{ service.publisher.nickname }}
         </view>
-        <view class="score">{{ service.score }}</view>
+        <view class="score">⭐️ {{ service.score }}</view>
       </view>
     </view>
     <view class="row">
