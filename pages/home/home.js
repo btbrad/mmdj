@@ -182,14 +182,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log('下拉刷新')
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  onReachBottom: async function () {
+    console.log('上拉加载')
+    if (!service.hasMoreData) return
+    const serviceList = await service.getServiceList()
+    // this.setData({ serviceList })
   },
 
   /**
