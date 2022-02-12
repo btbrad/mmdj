@@ -181,8 +181,12 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: async function () {
     console.log('下拉刷新')
+    const serviceList = await service.reset().getServiceList()
+    // this.setData({
+    //   serviceList
+    // })
   },
 
   /**

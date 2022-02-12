@@ -1,6 +1,8 @@
 import Http from '../utils/http'
 
 class Service {
+
+  // 一个实例对象，它是有状态的
   page = 1
   count = 10
   data = []
@@ -19,6 +21,15 @@ class Service {
     this.hasMoreData = !(this.page === serviceList.last_page)
     this.page++
     return this.data
+  }
+
+  reset () {
+    this.page = 1
+    this.count = 10
+    this.data = []
+    this.hasMoreData = true
+
+    return this
   }
 }
 
