@@ -1,6 +1,7 @@
 // pages/home/home.js
 import Category from '../../model/category'
 import Service from '../../model/service'
+import { throttle } from '../../utils/utils'
 
 const service = new Service()
 
@@ -217,7 +218,7 @@ Page({
     this._getServiceList()
   },
 
-  handleCategoryChange: function (event) {
+  handleCategoryChange: throttle(function (event) {
     if (this.data.categoryId === event.currentTarget.dataset.id) {
       return
     }
@@ -225,5 +226,5 @@ Page({
     const categoryId = event.currentTarget.dataset.id
     this.categoryId = categoryId
     this._getServiceList()
-  }
+  })
 })

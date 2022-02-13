@@ -1,3 +1,5 @@
+import { throttle } from "../../utils/utils"
+
 // components/tabs/tabs.js
 Component({
   options: {
@@ -24,14 +26,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handleTabChange: function (event) {
+    handleTabChange: throttle(function (event) {
       const index = event.currentTarget.dataset.index
       this.setData({
         currentTabIndex: index
       })
       // 触发自定义事件
       this.triggerEvent('change', { index })
-    },
+    }),
 
     switchTab: function ({direction}) {
       console.log(direction, this) 
