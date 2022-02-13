@@ -29,112 +29,120 @@ Page({
     ],
     tabIndex: 0,
     categoryId: 0,
-    serviceList: [
-      {
-        type: 1,
-        cover_image: {
-          path: '/images/cabin.jpeg'
-        },
-        title: '水电装修(测试)',
-        category: '疏通',
-        publisher: {
-          avatar: '/images/cabin.jpeg',
-          nickname: '粉刷匠',
-        },
-        score: '4.5',
-        create_time: '2022-02-10 15:32:10',
-        price: '999',
-        sales_volume: '99'
-      },
-      {
-        type: 1,
-        cover_image: {
-          path: '/images/cabin.jpeg'
-        },
-        title: '水电装修(测试)',
-        category: '疏通',
-        publisher: {
-          avatar: '/images/cabin.jpeg',
-          nickname: '粉刷匠',
-        },
-        score: '4.5',
-        create_time: '2022-02-10 15:32:10',
-        price: '999',
-        sales_volume: '99'
-      },
-      {
-        type: 1,
-        cover_image: {
-          path: '/images/cabin.jpeg'
-        },
-        title: '水电装修(测试)',
-        category: '疏通',
-        publisher: {
-          avatar: '/images/cabin.jpeg',
-          nickname: '粉刷匠',
-        },
-        score: '4.5',
-        create_time: '2022-02-10 15:32:10',
-        price: '999',
-        sales_volume: '99'
-      },
-      {
-        type: 1,
-        cover_image: {
-          path: '/images/cabin.jpeg'
-        },
-        title: '水电装修(测试)',
-        category: '疏通',
-        publisher: {
-          avatar: '/images/cabin.jpeg',
-          nickname: '粉刷匠',
-        },
-        score: '4.5',
-        create_time: '2022-02-10 15:32:10',
-        price: '999',
-        sales_volume: '99'
-      },
-      {
-        type: 1,
-        cover_image: {
-          path: '/images/cabin.jpeg'
-        },
-        title: '水电装修(测试)',
-        category: '疏通',
-        publisher: {
-          avatar: '/images/cabin.jpeg',
-          nickname: '粉刷匠',
-        },
-        score: '4.5',
-        create_time: '2022-02-10 15:32:10',
-        price: '999',
-        sales_volume: '99'
-      },
-      {
-        type: 1,
-        cover_image: {
-          path: '/images/cabin.jpeg'
-        },
-        title: '水电装修(测试)',
-        category: '疏通',
-        publisher: {
-          avatar: '/images/cabin.jpeg',
-          nickname: '粉刷匠',
-        },
-        score: '4.5',
-        create_time: '2022-02-10 15:32:10',
-        price: '999',
-        sales_volume: '99'
-      }
-    ]
+    loading: true,
+    serviceList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this._getServiceList()
-    this._getCategoryList()
+    const that = this
+    setTimeout(function() {
+      that.setData({
+        serviceList: [
+          {
+            type: 1,
+            cover_image: {
+              path: '/images/cabin.jpeg'
+            },
+            title: '水电装修(测试)',
+            category: '疏通',
+            publisher: {
+              avatar: '/images/cabin.jpeg',
+              nickname: '粉刷匠',
+            },
+            score: '4.5',
+            create_time: '2022-02-10 15:32:10',
+            price: '999',
+            sales_volume: '99'
+          },
+          {
+            type: 1,
+            cover_image: {
+              path: '/images/cabin.jpeg'
+            },
+            title: '水电装修(测试)',
+            category: '疏通',
+            publisher: {
+              avatar: '/images/cabin.jpeg',
+              nickname: '粉刷匠',
+            },
+            score: '4.5',
+            create_time: '2022-02-10 15:32:10',
+            price: '999',
+            sales_volume: '99'
+          },
+          {
+            type: 1,
+            cover_image: {
+              path: '/images/cabin.jpeg'
+            },
+            title: '水电装修(测试)',
+            category: '疏通',
+            publisher: {
+              avatar: '/images/cabin.jpeg',
+              nickname: '粉刷匠',
+            },
+            score: '4.5',
+            create_time: '2022-02-10 15:32:10',
+            price: '999',
+            sales_volume: '99'
+          },
+          {
+            type: 1,
+            cover_image: {
+              path: '/images/cabin.jpeg'
+            },
+            title: '水电装修(测试)',
+            category: '疏通',
+            publisher: {
+              avatar: '/images/cabin.jpeg',
+              nickname: '粉刷匠',
+            },
+            score: '4.5',
+            create_time: '2022-02-10 15:32:10',
+            price: '999',
+            sales_volume: '99'
+          },
+          {
+            type: 1,
+            cover_image: {
+              path: '/images/cabin.jpeg'
+            },
+            title: '水电装修(测试)',
+            category: '疏通',
+            publisher: {
+              avatar: '/images/cabin.jpeg',
+              nickname: '粉刷匠',
+            },
+            score: '4.5',
+            create_time: '2022-02-10 15:32:10',
+            price: '999',
+            sales_volume: '99'
+          },
+          {
+            type: 1,
+            cover_image: {
+              path: '/images/cabin.jpeg'
+            },
+            title: '水电装修(测试)',
+            category: '疏通',
+            publisher: {
+              avatar: '/images/cabin.jpeg',
+              nickname: '粉刷匠',
+            },
+            score: '4.5',
+            create_time: '2022-02-10 15:32:10',
+            price: '999',
+            sales_volume: '99'
+          }
+        ],
+        loading: false
+      })
+    }, 3000)
+    // this._getServiceList()
+    // this._getCategoryList()
   },
 
   // 私有函数
