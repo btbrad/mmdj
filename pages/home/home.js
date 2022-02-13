@@ -26,6 +26,8 @@ Page({
         name: '疏通'
       }
     ],
+    tabIndex: 0,
+    categoryId: 0,
     serviceList: [
       {
         type: 1,
@@ -137,7 +139,7 @@ Page({
   // 私有函数
   // 发送请求
   async _getServiceList() {
-    const serviceList = await service.getServiceList(1, 10)
+    const serviceList = await service.getServiceList(this.data.categoryId, this.data.tabIndex)
     // this.setData({
     //   serviceList
     // })
@@ -182,11 +184,13 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: async function () {
-    console.log('下拉刷新')
-    const serviceList = await service.reset().getServiceList()
+    // console.log('下拉刷新')
+    // const serviceList = await service.reset().getServiceList()
     // this.setData({
     //   serviceList
     // })
+    this._getServiceList()
+    wx.stopPullDownRefresh()
   },
 
   /**
@@ -207,12 +211,19 @@ Page({
   },
 
   handleTabChange: function (event) {
-    const index = event.detail.index
-    console.log(index)
+    const tabIndex = event.detail.index
+    console.log(tabIndex)
+    this.data.tabIndex = tabIndex
+    this._getServiceList()
   },
 
   handleCategoryChange: function (event) {
+    if (this.data.categoryId === event.currentTarget.dataset.id) {
+      return
+    }
     console.log(event)
-    const id = event.currentTarget.dataset.id
+    const categoryId = event.currentTarget.dataset.id
+    this.categoryId = categoryId
+    this._getServiceList()
   }
 })
