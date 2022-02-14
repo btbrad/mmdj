@@ -9,6 +9,7 @@
 
 .category {
   padding: 30rpx 0 30rpx 30rpx;
+  background-color: #fff;
 }
 .swiper-container {
   height: 150rpx;

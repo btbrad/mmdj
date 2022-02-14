@@ -28,10 +28,11 @@ Component({
   methods: {
     handleTabChange: throttle(function (event) {
       const index = event.currentTarget.dataset.index
+      console.log(111, index)
       this.setData({
         currentTabIndex: index
       })
-      // 触发自定义事件
+      // // 触发自定义事件
       this.triggerEvent('change', { index })
     }),
 

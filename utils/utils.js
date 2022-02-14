@@ -5,7 +5,7 @@ export const throttle = (fn, delay = 500) => {
       return
     }
     timer = setTimeout(() => {
-      fn(this, ...arguments)
+      fn.call(this, ...arguments)
     }, delay)
   }
 }

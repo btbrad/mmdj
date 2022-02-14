@@ -4,23 +4,28 @@ import wxToPromise from './wx'
 
 class Http{
   static async request({ url, data, method = 'GET' }) {
-    const res = await wxToPromise('request', {
-      url: `${APIConfig.baseUrl}${url}`,
-      data,
-      method,
-    })
-    console.log(res)
-    // 全局统一的异常处理
-    // 请求成功
-    if (res.statusCode < 400) {
-      return res.data.data
+    try {
+      const res = await wxToPromise('request', {
+        url: `${APIConfig.baseUrl}${url}`,
+        data,
+        method,
+      })
+      console.log(res)
+      // 全局统一的异常处理
+      // 请求成功
+      if (res.statusCode < 400) {
+        return res.data.data
+      }
+      // 请求失败
+      if (res.statusCode === 401) {
+        // token相关操作
+        return
+      }
+      Http._showError(res.data.error_code, res.data.message)
+    } catch (error) {
+      console.log(error)
     }
-    // 请求失败
-    if (res.statusCode === 401) {
-      // token相关操作
-      return
-    }
-    Http._showError(res.data.error_code, res.data.message)
+    
 
     // wx.request({
     //   url: `${APIConfig.baseUrl}${url}`,

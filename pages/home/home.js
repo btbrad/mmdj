@@ -223,7 +223,7 @@ Page({
     const tabIndex = event.detail.index
     console.log(tabIndex)
     this.data.tabIndex = tabIndex
-    this._getServiceList()
+    // this._getServiceList()
   },
 
   handleCategoryChange: throttle(function (event) {

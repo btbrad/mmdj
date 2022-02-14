@@ -18,7 +18,7 @@ class Service {
       data: { page: this.page, count: this.count, category_id: category_id || '', type: type || '' },
     })
     this.data = this.data.concat(serviceList)
-    this.hasMoreData = !(this.page === serviceList.last_page)
+    this.hasMoreData = !(this.page === serviceList?.last_page)
     this.page++
     return this.data
   }
