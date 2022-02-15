@@ -23,6 +23,12 @@ class Service {
     return this.data
   }
 
+  static getServiceById(serviceId) {
+    return HTMLPreElement.request({
+      url: `/service/${serviceId}`
+    })
+  }
+
   reset () {
     this.page = 1
     this.count = 10

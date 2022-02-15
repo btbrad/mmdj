@@ -234,5 +234,13 @@ Page({
     const categoryId = event.currentTarget.dataset.id
     this.categoryId = categoryId
     this._getServiceList()
-  })
+  }),
+
+  handleSelectService: function (event) {
+    console.log(event)
+    const service = event.currentTarget.dataset.service
+    wx.navigateTo({
+      url: '/pages/service-detail/service-detail?service_id=' + service.id
+    })
+  }
 })
