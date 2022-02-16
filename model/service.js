@@ -24,7 +24,7 @@ class Service {
   }
 
   static getServiceById(serviceId) {
-    return HTMLPreElement.request({
+    return Http.request({
       url: `/service/${serviceId}`
     })
   }

@@ -1,3 +1,5 @@
+import Service from "../../model/service"
+
 // pages/service-detail/service-detail.js
 Page({
 
@@ -15,13 +17,24 @@ Page({
   onLoad: function (options) {
     console.log(options)
     this.data.serviceId = options.serviceId
+    setTimeout(() => {
+      this.setData({
+        service: {
+          publisher: {
+            avatar: '/images/cabin.jpeg',
+            nickname: '粉刷匠'
+          }
+        }
+      }, 1000)
+    })
+    // this._getService()
   },
 
   async _getService() {
     const service = await Service.getServiceById(this.data.serviceId)
-    this.setData({
-      service
-    })
+    // this.setData({
+    //   service
+    // })
   },
 
   /**

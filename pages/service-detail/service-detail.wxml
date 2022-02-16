@@ -1,19 +1,30 @@
 <!--pages/service-detail/service-detail.wxml-->
 <view class="container">
   <view class="service-info">
-    <view class="cover-image"></view>
+    <image class="cover-image" mode="widthFix" src="{{ service.cover_image.path }}"></image>
     <view class="row">
-      <view class="title">详情页</view>
-      <view class="category"></view>
+      <view class="title">{{ service.title }}</view>
+      <view class="category">
+        <i-con name="biaoqian" color="#f27013"></i-con>
+        <view class="tag-text">{{ service.category.name }}</view>
+      </view>
     </view>
     <view class="row">
-      <view class="publisher"></view>
-      <view class="score"></view>
+      <view class="publisher">
+        <i-avatar 
+          shape="circle" 
+          src="{{ service.publisher.avatar }}" 
+          text="{{ service.publisher.nickname }}"
+          size="60"
+          font-size="28"
+        ></i-avatar>
+      </view>
+      <view class="score">⭐️ {{ service.score || 0 }}</view>
     </view>
     <view class="row">
-      <view class="create-time"></view>
+      <view class="publish-date">{{ service.create_time }}</view>
     </view>
-    <view class="row">
+    <view class="row row-space-between">
       <view class="price"></view>
       <view class="sales-volume"></view>
     </view>
