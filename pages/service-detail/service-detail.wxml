@@ -1,4 +1,6 @@
 <!--pages/service-detail/service-detail.wxml-->
+<wxs src="/common/wxs/status-text.wxs" module="statusText"></wxs>
+
 <view class="container">
   <view class="service-info">
     <image class="cover-image" mode="widthFix" src="{{ service.cover_image.path }}"></image>
@@ -32,9 +34,9 @@
       <view class="description"></view>
     </view>
   </view>
-  <view class="service-status">
-    <view class="label"></view>
-    <view class="status"></view>
+  <view wx:if="{{ isPublisher }}" class="service-status">
+    <view class="label">服务状态</view>
+    <view class="status">{{ statusText.convert(service.status) }}</view>
   </view>
   <view class="rating-list"></view>
   <view class="action-bar"></view>

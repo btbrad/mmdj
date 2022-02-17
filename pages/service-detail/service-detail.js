@@ -1,4 +1,5 @@
 import Service from "../../model/service"
+import User from "../../model/user"
 
 // pages/service-detail/service-detail.js
 Page({
@@ -8,13 +9,14 @@ Page({
    */
   data: {
     service: null,
-    serviceId: null
+    serviceId: null,
+    isPublisher: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
     console.log(options)
     this.data.serviceId = options.serviceId
     setTimeout(() => {
@@ -23,11 +25,13 @@ Page({
           publisher: {
             avatar: '/images/cabin.jpeg',
             nickname: '粉刷匠'
-          }
+          },
+          status: 1
         }
       }, 1000)
     })
-    // this._getService()
+    // await this._getService()
+    // this._checkRole()
   },
 
   async _getService() {
@@ -35,6 +39,15 @@ Page({
     // this.setData({
     //   service
     // })
+  },
+
+  _checkRole() {
+    const userInfo = User.getUserInfoByLocal()
+    if (userInfo && userInfo.id === this.data.service.publisher.id) {
+      this.setData({
+        isPublisher: true
+      })
+    }
   },
 
   /**
