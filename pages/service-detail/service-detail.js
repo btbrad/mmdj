@@ -1,5 +1,8 @@
+import Rating from "../../model/rating"
 import Service from "../../model/service"
 import User from "../../model/user"
+
+const rating = new Rating()
 
 // pages/service-detail/service-detail.js
 Page({
@@ -10,7 +13,8 @@ Page({
   data: {
     service: null,
     serviceId: null,
-    isPublisher: false
+    isPublisher: false,
+    ratingList: []
   },
 
   /**
@@ -32,6 +36,7 @@ Page({
     })
     // await this._getService()
     // this._checkRole()
+    // await this._getServiceRatingList()
   },
 
   async _getService() {
@@ -48,6 +53,13 @@ Page({
         isPublisher: true
       })
     }
+  },
+
+  async _getServiceRatingList() {
+    const ratingList = await rating.getServiceRatingList(this.data.serviceId)
+    this.setData({
+      ratingList
+    })
   },
 
   /**

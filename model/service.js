@@ -1,12 +1,9 @@
 import Http from '../utils/http'
+import Base from './base'
 
-class Service {
+class Service extends Base{
 
   // 一个实例对象，它是有状态的
-  page = 1
-  count = 10
-  data = []
-  hasMoreData = true
 
   async getServiceList(category_id = null, type = null) {
     console.log('获取服务列表')
@@ -29,14 +26,6 @@ class Service {
     })
   }
 
-  reset () {
-    this.page = 1
-    this.count = 10
-    this.data = []
-    this.hasMoreData = true
-
-    return this
-  }
 }
 
 export default Service

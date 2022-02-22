@@ -38,6 +38,11 @@
     <view class="label">服务状态</view>
     <view class="status">{{ statusText.convert(service.status) }}</view>
   </view>
-  <view class="rating-list"></view>
+  <view class="rating-list">
+    <view class="service-rating-title">历史评价</view>
+    <view class="service-rating-list">
+      <view wx:for="{{ ratingList }}" wx:key="index"></view>
+    </view>
+  </view>
   <view class="action-bar"></view>
 </view>
