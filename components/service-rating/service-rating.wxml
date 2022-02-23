@@ -1,0 +1,14 @@
+<!--components/service-rating/service-rating.wxml-->
+<view class="container">
+  <view class="row">
+    <view class="author">
+      <i-avatar src="{{ rating.author.avatar }}" text="{{ rating.author.nickname }}"></i-avatar>
+    </view>
+    <view class="create-time">
+      {{ rating.create_time }}
+    </view>
+  </view>
+  <view class="score">
+    {{ rating.score }}
+  </view>
+</view>
