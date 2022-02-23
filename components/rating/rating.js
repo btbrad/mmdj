@@ -15,6 +15,18 @@ Component({
     size: {
       type: String,
       value: '40'
+    },
+    differentColor: {
+      type: String,
+      value: '#888888'
+    },
+    selectedColor: {
+      type: String,
+      value: '#f3d066'
+    },
+    icon: {
+      type: String,
+      value: 'star'
     }
   },
 

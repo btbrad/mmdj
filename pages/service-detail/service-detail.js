@@ -31,7 +31,17 @@ Page({
             nickname: '粉刷匠'
           },
           status: 1
-        }
+        },
+        ratingList: [
+          {
+            author: {
+              avatar: '/images/cabin.jpeg',
+              nickname: '粉刷匠'
+            },
+            create_time: '2022-02-23 20:33:30',
+            score: 4
+          }
+        ]
       }, 1000)
     })
     // await this._getService()

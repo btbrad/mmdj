@@ -10,5 +10,6 @@
   </view>
   <view class="score">
     {{ rating.score }}
+    评分： <i-rating count="{{ 5 }}" selected="{{ rating.score }}" size="36"></i-rating>
   </view>
 </view>
